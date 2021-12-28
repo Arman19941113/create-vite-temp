@@ -1,0 +1,7 @@
+@import "/src/styles/mixins.css";
+#app {
+  height: 100vh;
+  overflow: auto;
+  @mixin scrollbar-mixin;
+  color: var(--textColor1);
+}

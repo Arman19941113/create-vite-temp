@@ -1,0 +1,18 @@
+@define-mixin scrollbar-mixin $width: 8px, $color: #90939966, $hoverColor: #909399AA, $borderRadius: 0 {
+  &::-webkit-scrollbar {
+    width: $width;
+    height: $width;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: $borderRadius;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: $borderRadius;
+    background-color: $color;
+    &:hover {
+      background-color: $hoverColor;
+    }
+  }
+}
