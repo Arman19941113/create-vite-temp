@@ -1,14 +1,15 @@
-# Create Vite App Template
+# Create Vite Project Template
+
+Vite templates for SPA...
 
 ## Environment
 
-```bash
-npm install -g pnpm
-npm install -g @antfu/ni
-```
+- node >= 14
+- pnpm
+- git
 
 ## Quick Start
 
 ```bash
-pnpm create vite-temp my-app
+pnpm create vite-temp
 ```

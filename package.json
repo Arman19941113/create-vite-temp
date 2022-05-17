@@ -1,20 +1,28 @@
 {
   "name": "create-vite-temp",
-  "version": "0.0.2",
+  "version": "0.0.6",
   "description": "vite template",
+  "keywords": ["vite project templates"],
+  "homepage": "https://github.com/Arman19941113/create-vite-temp#readme",
   "license": "MIT",
   "author": "Arman19941113",
-  "repository": "https://github.com/Arman19941113/create-vite-temp",
-  "homepage": "https://github.com/Arman19941113/create-vite-temp#readme",
-  "bin": {
-    "create-vite-temp": "index.js"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Arman19941113/create-vite-temp"
   },
+  "files": [
+    "index.mjs",
+    "template-*/"
+  ],
+  "type": "module",
+  "main": "index.mjs",
+  "exports": "./index.mjs",
+  "bin": "index.mjs",
   "dependencies": {
     "kolorist": "^1.5.1",
-    "minimist": "^1.2.5",
     "prompts": "^2.4.2"
   },
   "engines": {
-    "node": ">=12.0.0"
+    "node": ">=14"
   }
 }

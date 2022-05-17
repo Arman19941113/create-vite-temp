@@ -1,0 +1,38 @@
+{
+  "name": "template-vue2",
+  "private": true,
+  "scripts": {
+    "lint": "eslint --ext js,jsx,vue src && stylelint 'src/**/*.{css,vue}'",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "lint-staged": {
+    "*.{jsx,vue}": "eslint",
+    "*.{css,vue}": "stylelint"
+  },
+  "dependencies": {
+    "vue": "^2.6.14"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-plugin-vue": "^8.7.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^12.4.1",
+    "postcss": "^8.4.13",
+    "postcss-html": "^1.4.1",
+    "postcss-mixins": "^9.0.2",
+    "postcss-nested": "^5.0.6",
+    "postcss-preset-env": "^7.5.0",
+    "stylelint": "^14.8.2",
+    "stylelint-config-recommended-vue": "^1.4.0",
+    "stylelint-config-standard": "^25.0.0",
+    "vite": "^2.9.8",
+    "vite-plugin-vue2": "^2.0.0",
+    "vue-eslint-parser": "^8.3.0",
+    "vue-template-compiler": "^2.6.14"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}

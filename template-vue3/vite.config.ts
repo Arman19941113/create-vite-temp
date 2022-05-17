@@ -1,11 +1,9 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-// @ts-ignore: no d.ts
 import postcssMixins from 'postcss-mixins'
 // @ts-ignore ignore
 import postcssNested from 'postcss-nested'
-// @ts-ignore ignore
 import postcssPresetEnv from 'postcss-preset-env'
 
 // https://vitejs.dev/config/
@@ -15,7 +13,6 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': '/src',
-      vue: 'vue/dist/vue.esm-bundler.js',
     },
   },
   css: {

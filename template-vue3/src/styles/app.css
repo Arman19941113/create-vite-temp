@@ -4,4 +4,7 @@
   overflow: auto;
   @mixin scrollbar-mixin;
   color: var(--textColor1);
+  h1 {
+    text-align: center;
+  }
 }

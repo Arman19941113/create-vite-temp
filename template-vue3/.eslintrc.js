@@ -31,6 +31,7 @@ module.exports = {
     withDefaults: 'readonly',
   },
   rules: {
+    "indent": ["error", 2],
     // Typescript recommended
     '@typescript-eslint/ban-ts-comment': ['error', {
       'ts-expect-error': 'allow-with-description',

@@ -1,21 +1,17 @@
+import * as path from 'path'
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import vueJsx from '@vitejs/plugin-vue-jsx'
-// @ts-ignore: no d.ts
+import { createVuePlugin } from 'vite-plugin-vue2'
 import postcssMixins from 'postcss-mixins'
-// @ts-ignore ignore
 import postcssNested from 'postcss-nested'
-// @ts-ignore ignore
 import postcssPresetEnv from 'postcss-preset-env'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   base: '/',
-  plugins: [vue(), vueJsx()],
+  plugins: [createVuePlugin({ jsx: true })],
   resolve: {
     alias: {
-      '@': '/src',
-      vue: 'vue/dist/vue.esm-bundler.js',
+      '@': path.resolve(__dirname, 'src'),
     },
   },
   css: {
@@ -38,7 +34,7 @@ export default defineConfig({
     open: true,
   },
   build: {
-    target: 'esnext',
+    target: 'es2020',
     outDir: 'dist',
     assetsDir: 'assets',
     assetsInlineLimit: 20 * 1024,
