@@ -1,32 +1,20 @@
-import { defineConfig } from 'vite'
+import { defineConfig, splitVendorChunkPlugin } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-import postcssMixins from 'postcss-mixins'
-// @ts-ignore ignore
-import postcssNested from 'postcss-nested'
-import postcssPresetEnv from 'postcss-preset-env'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   base: '/',
-  plugins: [vue(), vueJsx()],
+  plugins: [
+    vue(),
+    vueJsx(),
+    splitVendorChunkPlugin(),
+  ],
   resolve: {
     alias: {
       '@': '/src',
     },
   },
-  css: {
-    postcss: {
-      plugins: [
-        postcssMixins,
-        postcssNested,
-        postcssPresetEnv({
-          stage: 0,
-        }),
-      ],
-    },
-  },
-  envDir: '/env',
   server: {
     host: '127.0.0.1',
     port: 3000,
@@ -35,12 +23,12 @@ export default defineConfig({
     open: true,
   },
   build: {
-    target: 'esnext',
+    target: 'es2022',
     outDir: 'dist',
     assetsDir: 'assets',
     assetsInlineLimit: 20 * 1024,
-    sourcemap: true,
-    reportCompressedSize: false,
+    sourcemap: false,
+    reportCompressedSize: true,
     chunkSizeWarningLimit: 4 * 1024,
   },
 })

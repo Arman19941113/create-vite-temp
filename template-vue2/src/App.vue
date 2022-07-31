@@ -15,4 +15,16 @@ export default {
 }
 </script>
 
-<style src="/src/styles/app.css"></style>
+<style>
+  @import "@/styles/mixins.css";
+
+  #app {
+    height: 100%;
+    overflow: auto;
+    @mixin scrollbar-mixin;
+    font-size: var(--font-size-body);
+    h1 {
+      text-align: center;
+    }
+  }
+</style>
