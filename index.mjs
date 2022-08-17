@@ -13,6 +13,7 @@ const stepLog = msg => console.log(cyan(msg))
 
 const TEMPLATES = [
   { name: 'vue2', color: green },
+  { name: 'vue2_7', color: green },
   { name: 'vue3', color: lightGreen },
 ]
 
