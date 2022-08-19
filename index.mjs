@@ -12,9 +12,9 @@ const errorException = msg => new Error(`${red('✖')} ${msg}`)
 const stepLog = msg => console.log(cyan(msg))
 
 const TEMPLATES = [
-  { name: 'vue2', color: green },
-  { name: 'vue2_7', color: green },
   { name: 'vue3', color: lightGreen },
+  { name: 'vue2.7', color: green },
+  { name: 'vue2', color: green },
 ]
 
 const RENAME_FILES = {
