@@ -1,0 +1,17 @@
+@import "./mixins.css";
+
+.beauty-scroller {
+  @mixin scrollbar-mixin;
+}
+
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.ellipsis-two {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

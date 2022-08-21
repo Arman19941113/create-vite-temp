@@ -20,6 +20,7 @@ module.exports = {
     'number-leading-zero': 'never',
     'rule-empty-line-before': null,
     'selector-list-comma-newline-after': null,
+    'value-no-vendor-prefix': null,
   },
   ignoreFiles: ['**/*.html', '**/*.js'],
 }

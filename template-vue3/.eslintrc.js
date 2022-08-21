@@ -40,6 +40,7 @@ module.exports = {
       'ts-check': 'allow-with-description',
       minimumDescriptionLength: 1,
     }],
+    '@typescript-eslint/no-explicit-any': 'off',
     // Priority B: Strongly Recommended
     'vue/html-closing-bracket-newline': ['error', {
       'singleline': 'never',

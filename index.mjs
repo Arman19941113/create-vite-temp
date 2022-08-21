@@ -12,6 +12,7 @@ const errorException = msg => new Error(`${red('✖')} ${msg}`)
 const stepLog = msg => console.log(cyan(msg))
 
 const TEMPLATES = [
+  { name: 'vue-app', color: lightGreen },
   { name: 'vue3', color: lightGreen },
   { name: 'vue2.7', color: green },
   { name: 'vue2', color: green },
