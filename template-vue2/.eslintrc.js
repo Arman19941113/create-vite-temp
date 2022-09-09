@@ -22,7 +22,11 @@ module.exports = {
   },
   globals: {},
   rules: {
-    'indent': ['error', 2],
+    'indent': [
+      'error', 2, {
+        'SwitchCase': 1,
+      },
+    ],
     // Priority B: Strongly Recommended
     'vue/html-closing-bracket-newline': [
       'error', {
