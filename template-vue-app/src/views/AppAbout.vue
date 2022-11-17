@@ -1,13 +1,14 @@
 <script lang="ts" setup>
-import store from '@/store'
+import { useCounterStore } from '@/store'
+
+const store = useCounterStore()
 </script>
 
 <template>
   <h1>About</h1>
+  <h1>count: {{ store.count }}</h1>
+  <h1>doubleCount: {{ store.doubleCount }}</h1>
   <h1>
-    <span>counts: {{ store.state.count }}</span>
-    <button @click="store.commit('increment', 2)">
-      Add 2
-    </button>
+    <button @click="store.increment( 2)">Add 2</button>
   </h1>
 </template>

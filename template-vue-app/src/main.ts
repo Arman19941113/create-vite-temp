@@ -3,12 +3,14 @@ import '@/styles/variable.css'
 import '@/styles/global.css'
 
 import { createApp } from 'vue'
+import { createPinia } from 'pinia'
 import App from '@/App.vue'
-import store from '@/store'
 import router from '@/router'
 
+const pinia = createPinia()
 const app = createApp(App)
-app.use(store)
+
 app.use(router)
+app.use(pinia)
 
 app.mount('#app')
