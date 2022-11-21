@@ -14,7 +14,14 @@ const router = createRouter({
   routes,
 })
 
+let initialized = false
+
 router.beforeEach((to, from, next) => {
+  if (!initialized) {
+    initialized = true
+    return next()
+  }
+
   http.cancelWhenRouteChanges()
   next()
 })

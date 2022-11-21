@@ -11,7 +11,7 @@
     "preview": "vite preview"
   },
   "lint-staged": {
-    "*.{jsx,vue}": "eslint",
+    "*.{js,ts,jsx,tsx,vue}": "eslint",
     "*.{css,vue}": "stylelint"
   },
   "dependencies": {

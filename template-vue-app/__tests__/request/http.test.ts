@@ -27,11 +27,22 @@ describe('http', () => {
       expect(err.message).toEqual('canceled')
       expect(err.code).toEqual('ERR_CANCELED')
     })
+    expect(http.getRequestSize()).toEqual(1)
+
     await sleep(50)
-    const res2 = await http.post('/api/sleep', 100, userConfig)
-    expect(res2.status).toEqual(200)
-    expect(res2.statusText).toEqual('OK')
-    expect(res2.data).toEqual('hello world')
+    http.post('/api/sleep', 100, userConfig).then(res2 => {
+      expect(res2.status).toEqual(200)
+      expect(res2.statusText).toEqual('OK')
+      expect(res2.data).toEqual('hello world')
+    })
+    expect(http.getRequestSize()).toEqual(2)
+
+    await sleep(150)
+    expect(http.getRequestSize()).toEqual(0)
+    const res3 = await http.post('/api/sleep', 10, userConfig)
+    expect(res3.status).toEqual(200)
+    expect(res3.statusText).toEqual('OK')
+    expect(res3.data).toEqual('hello world')
   })
 
   it('shouldn\'t cancel duplicated request', async () => {

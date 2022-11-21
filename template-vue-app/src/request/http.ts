@@ -5,6 +5,7 @@ import { logger } from '@/utils'
 import HttpCache from '@/request/http-cache'
 import type { HttpConfig } from '@/request/http-cache'
 
+let sequence = 1
 const httpConfigSet = new HttpCache()
 
 interface UserConfig extends AxiosRequestConfig {
@@ -43,11 +44,13 @@ axiosInstance.interceptors.response.use(function (response) {
   // Any status code that lie within the range of 2xx cause this function to trigger
   // Do something with response data
   logger(`<<---- res ended: ${response.config.method} ${response.config.url} ${JSON.stringify(response.data) || ''}`)
+  httpConfigSet.delete((response.config as HttpConfig)._sequence)
   return response
 }, function (error) {
   // Any status codes that falls outside the range of 2xx cause this function to trigger
   // Do something with response error
   logger(`<<---- res error: ${error.message}`)
+  httpConfigSet.delete(error.config._sequence)
   return Promise.reject(error)
 })
 
@@ -69,6 +72,7 @@ function myRequest<T>(
     ...defaultUserConfig,
     ...userConfig,
     signal: controller.signal,
+    _sequence: sequence++,
     _requestId: requestId,
     _controller: controller,
   }
@@ -104,6 +108,7 @@ const http = {
   post: <T>(url: string, data: any, userConfig?: UserConfig) => myRequest<T>('post', url, data, userConfig),
   patch: <T>(url: string, data: any, userConfig?: UserConfig) => myRequest<T>('patch', url, data, userConfig),
   postForm: <T>(url: string, data: any, userConfig?: UserConfig) => myRequest<T>('postForm', url, data, userConfig),
+  getRequestSize: () => httpConfigSet.size,
   cancelWhenRouteChanges: (reason?: string) => httpConfigSet.cancelWhenRouteChanges(reason),
 }
 
