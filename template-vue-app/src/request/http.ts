@@ -32,10 +32,9 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(function (config) {
   // Do something before request is sent
-  logger(`---->> req start: ${config.method} ${config.url} ${JSON.stringify(config.data) || ''}`)
   return config
 }, function (error) {
-  logger(`---->> req error: ${error}`)
+  logger(`---->> req error: ${error.stack}`)
   // Do something with request error
   return Promise.reject(error)
 })
@@ -43,13 +42,16 @@ axiosInstance.interceptors.request.use(function (config) {
 axiosInstance.interceptors.response.use(function (response) {
   // Any status code that lie within the range of 2xx cause this function to trigger
   // Do something with response data
-  logger(`<<---- res ended: ${response.config.method} ${response.config.url} ${JSON.stringify(response.data) || ''}`)
   httpConfigSet.delete((response.config as HttpConfig)._sequence)
   return response
 }, function (error) {
   // Any status codes that falls outside the range of 2xx cause this function to trigger
   // Do something with response error
-  logger(`<<---- res error: ${error.message}`)
+  if (error.code === 'ERR_CANCELED') {
+    logger(`<<---- req canceled: ${error.config._requestId}`)
+  } else {
+    logger(`<<---- res error: ${error.message}`)
+  }
   httpConfigSet.delete(error.config._sequence)
   return Promise.reject(error)
 })
@@ -64,7 +66,7 @@ function myRequest<T>(
 ): Promise<AxiosResponse<T>> {
   let axiosResponse
 
-  const requestId = `${method}-${url}`
+  const requestId = `${method.toUpperCase()} ${url}`
   httpConfigSet.cancelWhenReqIsDuplicated(requestId)
 
   const controller = new AbortController()

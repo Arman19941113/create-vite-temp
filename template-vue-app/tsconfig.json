@@ -12,6 +12,7 @@
     "noImplicitOverride": true,
     "noUnusedLocals": true,
     "noUnusedParameters": false,
+    "skipLibCheck": true,
     "strictNullChecks": true,
     "allowUnreachableCode": false,
     "lib": ["esnext", "dom"],
@@ -19,7 +20,7 @@
     "rootDir": ".",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
+      "@/*": ["src/*"]
     }
   },
   "include": ["src/**/*.d.ts", "src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "__tests__/**/*.ts"]
