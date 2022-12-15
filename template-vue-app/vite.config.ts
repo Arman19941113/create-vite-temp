@@ -1,6 +1,5 @@
 import { defineConfig } from 'vitest/config'
 import { splitVendorChunkPlugin } from 'vite'
-import basicSsl from '@vitejs/plugin-basic-ssl'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 
@@ -8,7 +7,6 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 export default defineConfig({
   base: '/',
   plugins: [
-    basicSsl(),
     vue(),
     vueJsx(),
     splitVendorChunkPlugin(),
@@ -21,12 +19,10 @@ export default defineConfig({
   server: {
     host: '127.0.0.1',
     port: 3000,
-    strictPort: true,
-    https: true,
-    open: true,
+    open: false,
   },
   build: {
-    target: 'es2022',
+    target: 'esnext',
     outDir: 'dist',
     assetsDir: 'assets',
     assetsInlineLimit: 20 * 1024,

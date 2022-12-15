@@ -51,8 +51,8 @@ axiosInstance.interceptors.response.use(function (response) {
     logger(`<<---- req canceled: ${error.config._requestId}`)
   } else {
     logger(`<<---- res error: ${error.message}`)
+    httpConfigSet.delete(error.config._sequence)
   }
-  httpConfigSet.delete(error.config._sequence)
   return Promise.reject(error)
 })
 
