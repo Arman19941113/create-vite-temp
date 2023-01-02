@@ -12,25 +12,25 @@ const server = http.createServer(async function (request, response) {
   const path = request.url
 
   switch (path) {
-  case '/api/hello-world':
-    response.statusCode = 200
-    response.setHeader('Content-Type', 'application/json')
-    response.write('hello world')
-    response.end()
-    break
-  case '/api/sleep':
-    setTimeout(() => {
+    case '/api/hello-world':
       response.statusCode = 200
       response.setHeader('Content-Type', 'application/json')
       response.write('hello world')
       response.end()
-    }, data)
-    break
-  default:
-    response.statusCode = 404
-    response.setHeader('Content-Type', 'application/json')
-    response.write('Not Found')
-    response.end()
+      break
+    case '/api/sleep':
+      setTimeout(() => {
+        response.statusCode = 200
+        response.setHeader('Content-Type', 'application/json')
+        response.write('hello world')
+        response.end()
+      }, data)
+      break
+    default:
+      response.statusCode = 404
+      response.setHeader('Content-Type', 'application/json')
+      response.write('Not Found')
+      response.end()
   }
 })
 

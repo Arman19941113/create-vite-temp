@@ -1,8 +1,7 @@
 import { beforeAll, afterAll, describe, it, expect } from 'vitest'
 
-import http from '@/request/http'
-import { sleep } from '@/utils'
-import { httpServer } from '../utils'
+import { http, sleep } from '@/utils'
+import { httpServer } from '../test-helper'
 
 const port = 9001
 beforeAll(async () => {

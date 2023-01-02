@@ -8,7 +8,7 @@ export interface HttpConfig extends AxiosRequestConfig {
   _controller: AbortController
 }
 
-export default class HttpCache {
+export class HttpCache {
   readonly #queue: Set<HttpConfig>
 
   constructor() {

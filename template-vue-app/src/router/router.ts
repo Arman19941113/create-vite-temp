@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import http from '@/request/http'
+import { http } from '@/utils'
 
 import AppHome from '@/views/AppHome.vue'
 import AppAbout from '@/views/AppAbout.vue'

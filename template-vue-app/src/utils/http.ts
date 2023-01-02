@@ -2,8 +2,7 @@ import axios from 'axios'
 import type { AxiosResponse, AxiosRequestConfig } from 'axios'
 
 import { logger } from '@/utils'
-import HttpCache from '@/request/http-cache'
-import type { HttpConfig } from '@/request/http-cache'
+import { HttpCache, HttpConfig } from '@/utils/http-cache';
 
 let sequence = 1
 const httpConfigSet = new HttpCache()
@@ -114,4 +113,4 @@ const http = {
   cancelWhenRouteChanges: (reason?: string) => httpConfigSet.cancelWhenRouteChanges(reason),
 }
 
-export default http
+export { http }
