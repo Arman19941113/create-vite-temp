@@ -2,6 +2,7 @@
   "name": "template-vue2",
   "private": true,
   "scripts": {
+    "postinstall": "husky install",
     "lint": "eslint --ext js,jsx,vue src && stylelint 'src/**/*.{css,vue}'",
     "dev": "vite",
     "build": "vite build",

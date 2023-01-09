@@ -112,13 +112,10 @@ for (const file of fs.readdirSync(templatePath)) {
   write(file)
 }
 
-stepLog('\nInstalling dependencies...')
-const installCommand = `cd ${rootPath} && pnpm install`
-execSync(installCommand, { stdio: 'inherit' })
-
-stepLog('\nInit git repository...')
+stepLog('\nInitializing repository...')
 execSync(`cd ${rootPath} && git init`, { stdio: 'ignore' })
-execSync(`cd ${rootPath} && npx husky install && npx husky add .husky/pre-commit "npx lint-staged"`, { stdio: 'inherit' })
+execSync(`cd ${rootPath} && pnpm install`, { stdio: 'inherit' })
+execSync(`cd ${rootPath} && npx husky add .husky/pre-commit "npx lint-staged"`, { stdio: 'inherit' })
 execSync(`cd ${rootPath} && git add --all && git commit -m 'build: init by create-package-temp'`, { stdio: 'ignore' })
 
 // success
