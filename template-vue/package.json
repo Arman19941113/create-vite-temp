@@ -1,5 +1,5 @@
 {
-  "name": "template-vue2",
+  "name": "template-vue",
   "private": true,
   "scripts": {
     "dev": "vite",
@@ -10,18 +10,21 @@
     "preview": "vite preview"
   },
   "lint-staged": {
-    "*.{jsx,vue}": "eslint",
+    "*.{js,ts,jsx,tsx,vue}": "eslint",
     "*.{css,vue}": "stylelint"
   },
   "dependencies": {
-    "vue": "^2.7.14"
+    "@armantang/fast-axios": "^1.0.2",
+    "pinia": "^2.0.32",
+    "vue": "^3.2.47",
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@types/node": "^18.14.0",
     "@typescript-eslint/eslint-plugin": "^5.53.0",
     "@typescript-eslint/parser": "^5.53.0",
-    "@vitejs/plugin-vue2": "^2.2.0",
-    "@vitejs/plugin-vue2-jsx": "^1.1.0",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vitejs/plugin-vue-jsx": "^3.0.0",
     "eslint": "^8.34.0",
     "eslint-plugin-vue": "^9.9.0",
     "husky": "^8.0.3",

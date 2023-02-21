@@ -4,6 +4,7 @@ import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import { execSync } from 'child_process'
+
 import prompts from 'prompts'
 import { red, cyan, green, lightGreen } from 'kolorist'
 
@@ -12,9 +13,7 @@ const errorException = msg => new Error(`${red('✖')} ${msg}`)
 const stepLog = msg => console.log(cyan(msg))
 
 const TEMPLATES = [
-  { name: 'vue-app', color: lightGreen },
-  { name: 'vue3', color: lightGreen },
-  { name: 'vue2.7', color: green },
+  { name: 'vue', color: lightGreen },
   { name: 'vue2', color: green },
 ]
 
@@ -105,6 +104,7 @@ const write = (file, content) => {
 const pkgFilePath = 'package.json'
 const parsedPkgJson = JSON.parse(fs.readFileSync(path.join(templatePath, pkgFilePath), 'utf-8'))
 parsedPkgJson.name = projectName
+parsedPkgJson.scripts.postinstall = 'husky install'
 write(pkgFilePath, JSON.stringify(parsedPkgJson, null, 2) + '\n')
 // copy other files
 for (const file of fs.readdirSync(templatePath)) {
@@ -116,7 +116,7 @@ stepLog('\nInitializing repository...')
 execSync(`cd ${rootPath} && git init`, { stdio: 'ignore' })
 execSync(`cd ${rootPath} && pnpm install`, { stdio: 'inherit' })
 execSync(`cd ${rootPath} && npx husky add .husky/pre-commit "npx lint-staged"`, { stdio: 'inherit' })
-execSync(`cd ${rootPath} && git add --all && git commit -m 'build: init by create-package-temp'`, { stdio: 'ignore' })
+execSync(`cd ${rootPath} && git add --all && git commit -m 'initialized by create-package-temp'`, { stdio: 'ignore' })
 
 // success
 console.log(`\nDone. Now run ${cyan('cd ' + path.relative(cwd, rootPath))} and enjoy coding!`)

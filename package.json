@@ -5,7 +5,7 @@
   "keywords": ["vite project templates"],
   "homepage": "https://github.com/Arman19941113/create-vite-temp#readme",
   "license": "MIT",
-  "author": "Arman19941113",
+  "author": "Arman Tang",
   "repository": {
     "type": "git",
     "url": "https://github.com/Arman19941113/create-vite-temp"
@@ -23,6 +23,6 @@
     "prompts": "^2.4.2"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=16"
   }
 }

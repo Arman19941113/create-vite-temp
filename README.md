@@ -1,10 +1,10 @@
 # Create Vite Project Template
 
-Vite templates for SPA...
+Vue SPA templates.
 
 ## Environment
 
-- node >= 14
+- node >= 16
 - pnpm
 - git
 

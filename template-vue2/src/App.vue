@@ -1,30 +1,16 @@
-<template>
-  <div id="app">
-    <h1>{{ msg }}</h1>
-  </div>
-</template>
+<script setup lang="ts">
+import { ref } from 'vue'
 
-<script>
-export default {
-  name: 'App',
-  data() {
-    return {
-      msg: 'hello',
-    }
-  },
-}
+const msg = ref('hello')
 </script>
 
-<style>
-  @import "@/styles/mixins.css";
+<template>
+  <h1 style="text-align: center;">{{ msg }}</h1>
+</template>
 
+<style>
   #app {
     height: 100%;
     overflow: auto;
-    @mixin scrollbar-mixin;
-    font-size: var(--font-size-body);
-    h1 {
-      text-align: center;
-    }
   }
 </style>

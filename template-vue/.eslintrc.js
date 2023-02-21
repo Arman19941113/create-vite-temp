@@ -47,18 +47,8 @@ module.exports = {
       },
     ],
     '@typescript-eslint/no-explicit-any': 'off',
-    // Priority B: Strongly Recommended
-    'vue/html-closing-bracket-newline': [
-      'error', {
-        'singleline': 'never',
-        'multiline': 'never',
-      },
-    ],
-    'vue/html-indent': [
-      'error', 2, {
-        'alignAttributesVertically': false,
-      },
-    ],
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    // Vue recommended
     'vue/html-self-closing': [
       'error', {
         'html': {
@@ -71,6 +61,5 @@ module.exports = {
       },
     ],
     'vue/max-attributes-per-line': 'off',
-    'vue/singleline-html-element-content-newline': 'off',
   },
 }
