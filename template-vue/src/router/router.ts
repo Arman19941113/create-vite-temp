@@ -7,6 +7,7 @@ import AppAbout from '@/views/AppAbout.vue'
 const routes = [
   { path: '/', component: AppHome },
   { path: '/about', component: AppAbout },
+  { path: '/:pathMatch(.*)', component: { template: '<div style="text-align: center;">404 Not Found</div>' } },
 ]
 
 const router = createRouter({
