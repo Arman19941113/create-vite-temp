@@ -9,7 +9,7 @@ const store = useCounterStore()
   <div>count: {{ store.count }}</div>
   <div>doubleCount: {{ store.doubleCount }}</div>
   <div>
-    <button @click="store.increment( 2)">
+    <button @click="store.increment(2)">
       Add 2
     </button>
   </div>

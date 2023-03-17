@@ -12,7 +12,9 @@
   },
   "files": [
     "index.mjs",
-    "template-*/"
+    "template-*/**",
+    "!template-*/node_modules",
+    "!template-*/dist*"
   ],
   "type": "module",
   "main": "index.mjs",

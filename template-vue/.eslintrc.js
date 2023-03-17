@@ -60,6 +60,9 @@ module.exports = {
         'math': 'never',
       },
     ],
-    'vue/max-attributes-per-line': 'off',
+    'vue/max-attributes-per-line': ['error', {
+      'singleline': 4,
+      'multiline': 1,
+    }],
   },
 }
