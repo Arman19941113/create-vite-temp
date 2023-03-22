@@ -1,32 +1,21 @@
 <script lang="ts" setup>
-import { useCounterStore } from '@/store'
+import { useI18n } from 'vue-i18n'
+import { useCommonStore } from '@/store'
 
-const store = useCounterStore()
-
-store.$subscribe((mutation, state) => {
-  // same as store.$id
-  console.log('mutation.storeId', mutation.storeId) // 'counter'
-  // import { MutationType } from 'pinia'
-  console.log('mutation.type', mutation.type) // 'direct' | 'patch object' | 'patch function'
-  // only available with mutation.type === 'patch object'
-  if (mutation.type === 'patch object') {
-    console.log('mutation.payload', mutation.payload) // patch object passed to cartStore.$patch()
-  }
-
-  console.log('state', JSON.parse(JSON.stringify(state)))
-})
+const common = useCommonStore()
+const { t } = useI18n()
 </script>
 
 <template>
   <div>Home</div>
-  <div>count: {{ store.count }}</div>
-  <div>doubleCount: {{ store.doubleCount }}</div>
+  <div> {{ t('hello.world') }}</div>
+  <div>lang: {{ common.lang }}</div>
   <div>
-    <button @click="store.increment(1)">
-      Add 1
+    <button @click="common.setLang('zh-cn')">
+      中文
     </button>
-    <button @click="store.$patch({ count: 999 })">
-      Set 999
+    <button @click="common.setLang('en-us')">
+      English
     </button>
   </div>
 </template>

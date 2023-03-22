@@ -64,5 +64,10 @@ module.exports = {
       'singleline': 4,
       'multiline': 1,
     }],
+    // Eslint bugs
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': 'warn',
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': 'error',
   },
 }

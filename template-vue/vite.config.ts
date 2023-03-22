@@ -5,6 +5,14 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 // https://vitejs.dev/config/
 export default defineConfig({
   base: '/',
+  define: {
+    // components and directives all fully support installation: `true`
+    __VUE_I18N_FULL_INSTALL__: true,
+    // vue-i18n legacy style APIs support: `true`
+    __VUE_I18N_LEGACY_API__: false,
+    // `@intlify/devtools` support in production: `false`
+    __INTLIFY_PROD_DEVTOOLS__: false,
+  },
   plugins: [
     vue(),
     vueJsx(),

@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <router-link class="router-link" to="/">
+    <router-link class="router-link" to="/home">
       Go to Home
     </router-link>
     <router-link class="router-link" to="/about">

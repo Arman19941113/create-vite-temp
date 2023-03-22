@@ -4,26 +4,51 @@ import { http } from '@/utils'
 import AppHome from '@/views/AppHome.vue'
 import AppAbout from '@/views/AppAbout.vue'
 
-const routes = [
-  { path: '/', component: AppHome },
-  { path: '/about', component: AppAbout },
-  { path: '/:pathMatch(.*)', component: { template: '<div style="text-align: center;">404 Not Found</div>' } },
-]
+export const ROUTE_NAMES = {
+  APP_HOME: 'appHome',
+  APP_ABOUT: 'appAbout',
+}
 
-const router = createRouter({
-  history: createWebHistory(),
-  routes,
-})
+export function initRouter () {
 
-let initialized = false
+  const routes = [
+    {
+      path: '/',
+      redirect: '/home',
+    },
+    {
+      path: '/home',
+      name: ROUTE_NAMES.APP_HOME,
+      component: AppHome,
+    },
+    {
+      path: '/about',
+      name: ROUTE_NAMES.APP_ABOUT,
+      component: AppAbout,
+    },
+    {
+      path: '/:pathMatch(.*)',
+      component: {
+        template: '<div style="text-align: center;">404 Not Found</div>',
+      },
+    },
+  ]
 
-router.beforeEach((to, from, next) => {
-  if (initialized) {
-    http.clearRequests()
-  } else {
-    initialized = true
-  }
-  next()
-})
+  const router = createRouter({
+    history: createWebHistory(),
+    routes,
+  })
 
-export { router }
+  let initialized = false
+
+  router.beforeEach((to, from, next) => {
+    if (initialized) {
+      http.clearRequests()
+    } else {
+      initialized = true
+    }
+    next()
+  })
+
+  return router
+}

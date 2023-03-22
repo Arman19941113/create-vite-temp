@@ -4,14 +4,14 @@ import '@/styles/global.css'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-
-import { router } from '@/router'
+import { initRouter } from '@/router'
+import { initI18n } from '@/locales'
 import App from '@/App.vue'
 
-const pinia = createPinia()
 const app = createApp(App)
 
-app.use(router)
-app.use(pinia)
+app.use(createPinia())
+app.use(initRouter())
+app.use(initI18n())
 
 app.mount('#app')
