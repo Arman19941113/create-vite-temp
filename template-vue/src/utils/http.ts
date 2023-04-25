@@ -1,6 +1,14 @@
+import { AxiosError } from 'axios'
 import { FastAxios } from '@armantang/fast-axios'
 
-const http = new FastAxios({
+export class HttpError extends Error {
+  constructor (message: string, public code: number) {
+    super(message)
+    this.name = 'HttpError'
+  }
+}
+
+export const http = new FastAxios({
   timeout: 10000,
   baseURL: '/',
   headers: {
@@ -15,7 +23,7 @@ const http = new FastAxios({
     // Do something before request is sent
     return config
   },
-  onReqRejected: function (error) {
+  onReqRejected: function (error: AxiosError) {
     // Do something with request error
     return Promise.reject(error)
   },
@@ -26,20 +34,12 @@ const http = new FastAxios({
     if (resData.code === 0) {
       return resData
     } else {
-      const message = `${resData.code} ${resData.message}`
-      console.error(message)
-      return Promise.reject(new Error(message))
+      return Promise.reject(new HttpError(resData.message, resData.code))
     }
   },
-  onResRejected: function (error) {
+  onResRejected: function (error: AxiosError) {
     // Any status codes that falls outside the range of 2xx cause this function to trigger
     // Do something with response error
-    // For canceled request: error.code === 'ERR_CANCELED'
-    if (error.code !== 'ERR_CANCELED') {
-      console.error(error.message)
-    }
     return Promise.reject(error)
   },
 })
-
-export { http }
