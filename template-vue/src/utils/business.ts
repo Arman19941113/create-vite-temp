@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { HttpError } from '@/utils/http'
 
-export function catchError (message: string, error: unknown, show = true): void {
+export function catchError(message: string, error: unknown, show = true): void {
   // report error
   if (error instanceof axios.AxiosError) {
     console.error(`[${error.code}] ${error.stack}`)

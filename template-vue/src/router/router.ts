@@ -9,8 +9,7 @@ export const ROUTE_NAMES = {
   APP_ABOUT: 'appAbout',
 }
 
-export function initRouter () {
-
+export function initRouter() {
   const routes = [
     {
       path: '/',

@@ -14,7 +14,8 @@
   },
   "lint-staged": {
     "*.{js,ts,jsx,tsx,vue}": "eslint",
-    "*.{css,vue}": "stylelint"
+    "*.{css,vue}": "stylelint",
+    "*.{js,ts,jsx,tsx,vue,css}": "prettier --write"
   },
   "dependencies": {
     "@armantang/fast-axios": "^1.0.6",

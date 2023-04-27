@@ -1,4 +1,4 @@
-@define-mixin scrollbar-mixin $width: 8px, $color: #90939966, $hoverColor: #909399AA, $borderRadius: 0 {
+@define-mixin scrollbar-mixin $width: 8px, $color: #90939966, $hoverColor: #909399aa, $borderRadius: 0 {
   &::-webkit-scrollbar {
     width: $width;
     height: $width;

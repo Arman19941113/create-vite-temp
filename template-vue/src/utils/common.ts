@@ -1,18 +1,22 @@
 import { Language } from '@/types'
 
 // Utility function to get a cookie by name
-export function getCookie (cookieName: string): string | null {
+export function getCookie(cookieName: string): string | null {
   const match = document.cookie.match(new RegExp(`(^|;\\s*)(${encodeURIComponent(cookieName)})=([^;]*)`))
   return match ? decodeURIComponent(match[3]) : null
 }
 
 // Utility function to set a cookie
-export function setCookie (cookieName: string, value: string, options: {
-  expires?: number
-  path?: string
-  domain?: string
-  secure?: boolean
-} = {}): void {
+export function setCookie(
+  cookieName: string,
+  value: string,
+  options: {
+    expires?: number
+    path?: string
+    domain?: string
+    secure?: boolean
+  } = {},
+): void {
   let cookieString = `${encodeURIComponent(cookieName)}=${encodeURIComponent(value)}`
 
   if (options.expires) {
@@ -36,7 +40,7 @@ export function setCookie (cookieName: string, value: string, options: {
   document.cookie = cookieString
 }
 
-export function getLang (cookieName?: string): Language {
+export function getLang(cookieName?: string): Language {
   let lang
 
   if (cookieName) {

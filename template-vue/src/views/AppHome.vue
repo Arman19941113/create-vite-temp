@@ -8,14 +8,10 @@ const { t } = useI18n()
 
 <template>
   <div>Home</div>
-  <div> {{ t('hello.world') }}</div>
+  <div>{{ t('hello.world') }}</div>
   <div>lang: {{ common.lang }}</div>
   <div>
-    <button @click="common.setLang('zh-cn')">
-      中文
-    </button>
-    <button @click="common.setLang('en-us')">
-      English
-    </button>
+    <button @click="common.setLang('zh-cn')">中文</button>
+    <button @click="common.setLang('en-us')">English</button>
   </div>
 </template>
