@@ -7,7 +7,7 @@ module.exports = {
     'at-rule-no-unknown': [
       true,
       {
-        ignoreAtRules: [/^(define-)?mixin$/],
+        ignoreAtRules: [/^(define-)?mixin$/, 'tailwind'],
       },
     ],
     'declaration-empty-line-before': null,
