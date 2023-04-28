@@ -116,6 +116,7 @@ stepLog('\nInitializing repository...')
 execSync(`cd ${rootPath} && git init`, { stdio: 'ignore' })
 execSync(`cd ${rootPath} && pnpm install`, { stdio: 'inherit' })
 execSync(`cd ${rootPath} && npx husky add .husky/pre-commit "npx lint-staged"`, { stdio: 'inherit' })
+execSync(`cd ${rootPath} && npx husky add .husky/pre-push "npx vue-tsc --noEmit"`, { stdio: 'inherit' })
 execSync(`cd ${rootPath} && git add --all && git commit -m 'initialized by create-package-temp'`, { stdio: 'ignore' })
 
 // success
