@@ -5,7 +5,6 @@ import tailwindcss from 'tailwindcss'
 import tailwindNesting from 'tailwindcss/nesting/index.js'
 
 export default {
-  parser: 'postcss-scss',
   plugins: [
     postcssMixins,
     postcssSimpleVars,
@@ -13,7 +12,6 @@ export default {
     tailwindcss,
     postcssPresetEnv({
       stage: 0,
-      // browsers: .browserslistrc
     }),
   ],
 }
