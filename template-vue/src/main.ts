@@ -1,6 +1,5 @@
 import '@/styles/tailwind.css'
 import '@/styles/variable.css'
-import '@/styles/reset.css'
 import '@/styles/global.css'
 
 import { createApp } from 'vue'

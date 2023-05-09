@@ -14,6 +14,7 @@
   "bracketSpacing": true,
   "bracketSameLine": false,
   "arrowParens": "avoid",
+  "htmlWhitespaceSensitivity": "ignore",
   "overrides": [
     {
       "files": ["**/*.css"],
