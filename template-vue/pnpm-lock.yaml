@@ -69,21 +69,12 @@ devDependencies:
   postcss-html:
     specifier: ^1.5.0
     version: 1.5.0
-  postcss-mixins:
-    specifier: ^9.0.4
-    version: 9.0.4(postcss@8.4.23)
   postcss-nested:
     specifier: ^6.0.1
     version: 6.0.1(postcss@8.4.23)
   postcss-preset-env:
     specifier: ^8.3.2
     version: 8.3.2(postcss@8.4.23)
-  postcss-scss:
-    specifier: ^4.0.6
-    version: 4.0.6(postcss@8.4.23)
-  postcss-simple-vars:
-    specifier: ^7.0.1
-    version: 7.0.1(postcss@8.4.23)
   prettier:
     specifier: ^2.8.8
     version: 2.8.8
@@ -3718,19 +3709,6 @@ packages:
     resolution: {integrity: sha512-3sOlxmbKcSHMjlUXQZKQ06jOswE7oVkXPxmZdoB1r5l0q6gTFTQSHxNxOrCccElbW7dxNytifNEo8qidX2Vsig==}
     dev: true
 
-  /postcss-mixins@9.0.4(postcss@8.4.23):
-    resolution: {integrity: sha512-XVq5jwQJDRu5M1XGkdpgASqLk37OqkH4JCFDXl/Dn7janOJjCTEKL+36cnRVy7bMtoBzALfO7bV7nTIsFnUWLA==}
-    engines: {node: '>=14.0'}
-    peerDependencies:
-      postcss: ^8.2.14
-    dependencies:
-      fast-glob: 3.2.12
-      postcss: 8.4.23
-      postcss-js: 4.0.1(postcss@8.4.23)
-      postcss-simple-vars: 7.0.1(postcss@8.4.23)
-      sugarss: 4.0.1(postcss@8.4.23)
-    dev: true
-
   /postcss-nested@6.0.1(postcss@8.4.23):
     resolution: {integrity: sha512-mEp4xPMi5bSWiMbsgoPfcP74lsWLHkQbZc3sY+jWYd65CUwXrUaTp0fmNpa01ZcETKlIgUdFN/MpS2xZtqL9dQ==}
     engines: {node: '>=12.0'}
@@ -3884,15 +3862,6 @@ packages:
       postcss: 8.4.23
     dev: true
 
-  /postcss-scss@4.0.6(postcss@8.4.23):
-    resolution: {integrity: sha512-rLDPhJY4z/i4nVFZ27j9GqLxj1pwxE80eAzUNRMXtcpipFYIeowerzBgG3yJhMtObGEXidtIgbUpQ3eLDsf5OQ==}
-    engines: {node: '>=12.0'}
-    peerDependencies:
-      postcss: ^8.4.19
-    dependencies:
-      postcss: 8.4.23
-    dev: true
-
   /postcss-selector-not@7.0.1(postcss@8.4.23):
     resolution: {integrity: sha512-1zT5C27b/zeJhchN7fP0kBr16Cc61mu7Si9uWWLoA3Px/D9tIJPKchJCkUH3tPO5D0pCFmGeApAv8XpXBQJ8SQ==}
     engines: {node: ^14 || ^16 || >=18}
@@ -3909,15 +3878,6 @@ packages:
     dependencies:
       cssesc: 3.0.0
       util-deprecate: 1.0.2
-    dev: true
-
-  /postcss-simple-vars@7.0.1(postcss@8.4.23):
-    resolution: {integrity: sha512-5GLLXaS8qmzHMOjVxqkk1TZPf1jMqesiI7qLhnlyERalG0sMbHIbJqrcnrpmZdKCLglHnRHoEBB61RtGTsj++A==}
-    engines: {node: '>=14.0'}
-    peerDependencies:
-      postcss: ^8.2.1
-    dependencies:
-      postcss: 8.4.23
     dev: true
 
   /postcss-value-parser@4.2.0:
@@ -4490,15 +4450,6 @@ packages:
       mz: 2.7.0
       pirates: 4.0.5
       ts-interface-checker: 0.1.13
-    dev: true
-
-  /sugarss@4.0.1(postcss@8.4.23):
-    resolution: {integrity: sha512-WCjS5NfuVJjkQzK10s8WOBY+hhDxxNt/N6ZaGwxFZ+wN3/lKKFSaaKUNecULcTTvE4urLcKaZFQD8vO0mOZujw==}
-    engines: {node: '>=12.0'}
-    peerDependencies:
-      postcss: ^8.3.3
-    dependencies:
-      postcss: 8.4.23
     dev: true
 
   /supports-color@5.5.0:

@@ -7,11 +7,21 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div>Home</div>
-  <div>{{ t('hello.world') }}</div>
-  <div>lang: {{ common.lang }}</div>
-  <div>
-    <button @click="common.setLang('zh-cn')">中文</button>
-    <button @click="common.setLang('en-us')">English</button>
+  <div class="text-center">Home</div>
+  <div class="text-center">{{ t('hello.world') }}</div>
+  <div class="text-center">lang: {{ common.lang }}</div>
+  <div class="text-center">
+    <button
+      class="mr-4 rounded-md px-4 py-2 shadow-sm ring-1 ring-slate-700/10 hover:bg-slate-50"
+      @click="common.setLang('zh-cn')"
+    >
+      中文
+    </button>
+    <button
+      class="rounded-md px-4 py-2 shadow-sm ring-1 ring-slate-700/10 hover:bg-slate-50"
+      @click="common.setLang('en-us')"
+    >
+      English
+    </button>
   </div>
 </template>
