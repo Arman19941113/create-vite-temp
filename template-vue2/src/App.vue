@@ -5,12 +5,11 @@ const msg = ref('hello')
 </script>
 
 <template>
-  <h1 style="text-align: center;">{{ msg }}</h1>
+  <div class="text-center">{{ msg }}</div>
 </template>
 
 <style>
-  #app {
-    height: 100%;
-    overflow: auto;
-  }
+#app {
+  @apply h-full text-sm leading-6 text-neutral-600;
+}
 </style>

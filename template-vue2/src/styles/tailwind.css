@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply h-full;
+  }
+
+  body {
+    @apply antialiased;
+  }
+}
+
+@layer components {
+  .scroll-container {
+    @apply overflow-auto;
+
+    &::-webkit-scrollbar {
+      @apply h-2 w-2;
+    }
+
+    &::-webkit-scrollbar-track {
+      @apply rounded-none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      @apply rounded-none bg-gray-500/40;
+
+      &:hover {
+        @apply bg-gray-500/70;
+      }
+    }
+  }
+}

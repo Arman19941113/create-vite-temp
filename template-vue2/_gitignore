@@ -1,8 +1,14 @@
 .DS_Store
-*.log
+*.local
+node_modules
+dist
 
-.idea/
-node_modules/
-dist*/
-temp/
-coverage/
+# Logs
+logs
+*.log
+pnpm-debug.log*
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
