@@ -66,12 +66,6 @@ devDependencies:
   postcss:
     specifier: ^8.4.23
     version: 8.4.23
-  postcss-html:
-    specifier: ^1.5.0
-    version: 1.5.0
-  postcss-nested:
-    specifier: ^6.0.1
-    version: 6.0.1(postcss@8.4.23)
   postcss-preset-env:
     specifier: ^8.3.2
     version: 8.3.2(postcss@8.4.23)
