@@ -6,4 +6,4 @@ export function getUser() {
   return http.get<UserBasic>('/api/common/user')
 }
 
-getUser().catch(e => catchError('getUser error', e))
+getUser().catch((e: unknown) => catchError('getUser error', e))

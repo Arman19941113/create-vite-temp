@@ -8,6 +8,7 @@ export default {
     tailwindcss,
     postcssPresetEnv({
       stage: 0,
+      enableClientSidePolyfills: true,
     }),
   ],
 }

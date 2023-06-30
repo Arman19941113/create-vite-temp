@@ -4,26 +4,28 @@ import { HttpError } from '@/utils/http'
 export function catchError(message: string, error: unknown, show = true): void {
   // report error
   if (error instanceof axios.AxiosError) {
-    console.error(`[${error.code}] ${error.stack}`)
+    console.error(`${message} - [${error.code}] ${error.stack}`)
   } else if (error instanceof HttpError) {
-    console.error(`[${error.code}] ${error.stack}`)
+    console.error(`${message} - [${error.code}] ${error.stack}`)
   } else if (error instanceof Error) {
-    console.error(`${error.name}: ${error.stack}`)
+    console.error(`${message} - ${error.stack}`)
   }
 
   if (show) {
     if (error instanceof axios.AxiosError) {
       // network error
       if (error.code === 'ERR_CANCELED') {
-        // ignore error
+        // ignore cancel error
       } else {
         // show error
+        console.log(message)
       }
     } else if (error instanceof HttpError) {
       // server error
-      // show error
+      console.log(error.message)
     } else if (error instanceof Error) {
-      // show error
+      // logic error
+      console.log(message)
     }
   }
 }

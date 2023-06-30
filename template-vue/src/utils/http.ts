@@ -1,4 +1,4 @@
-import { AxiosError } from 'axios'
+import { AxiosError, AxiosResponse, InternalAxiosRequestConfig } from 'axios'
 import { FastAxios } from '@armantang/fast-axios'
 
 export class HttpError extends Error {
@@ -21,7 +21,7 @@ export const http = new FastAxios(
     xsrfHeaderName: import.meta.env.VITE_CSRF_HEADER_NAME,
   },
   {
-    onReqFulfilled: function (config) {
+    onReqFulfilled: function (config: InternalAxiosRequestConfig) {
       // Do something before request is sent
       return config
     },
@@ -29,7 +29,7 @@ export const http = new FastAxios(
       // Do something with request error
       return Promise.reject(error)
     },
-    onResFulfilled: function (response) {
+    onResFulfilled: function (response: AxiosResponse) {
       // Any status code that lie within the range of 2xx cause this function to trigger
       // Do something with response data
       const resData = response.data
