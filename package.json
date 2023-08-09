@@ -2,7 +2,9 @@
   "name": "create-vite-temp",
   "version": "1.1.10",
   "description": "vite template",
-  "keywords": ["vite project templates"],
+  "keywords": [
+    "vite project templates"
+  ],
   "homepage": "https://github.com/Arman19941113/create-vite-temp#readme",
   "license": "MIT",
   "author": "Arman Tang",
@@ -21,7 +23,7 @@
   "exports": "./index.mjs",
   "bin": "index.mjs",
   "dependencies": {
-    "kolorist": "^1.5.1",
+    "kolorist": "^1.8.0",
     "prompts": "^2.4.2"
   },
   "engines": {
